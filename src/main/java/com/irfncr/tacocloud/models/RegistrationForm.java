@@ -15,8 +15,8 @@ public class RegistrationForm {
     private String zip;
     private String phone;
 
-    public User toUser(PasswordEncoder passwordEncoder){
-        return new User(
+    public WebsiteUser toUser(PasswordEncoder passwordEncoder){
+        return new WebsiteUser(
                 username, passwordEncoder.encode(password),
                 fullname, street, city, state, zip, phone);
     }

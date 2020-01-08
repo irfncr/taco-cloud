@@ -1,12 +1,15 @@
 package com.irfncr.tacocloud.Services;
 
-import com.irfncr.tacocloud.models.User;
+import com.irfncr.tacocloud.models.WebsiteUser;
 import com.irfncr.tacocloud.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.stereotype.Service;
 
+
+@Service
 public class UserRepositoryUserDetailsService implements UserDetailsService {
     private UserRepository userRepo;
 
@@ -18,7 +21,7 @@ public class UserRepositoryUserDetailsService implements UserDetailsService {
     @Override
     public UserDetails loadUserByUsername(String username)
         throws UsernameNotFoundException{
-        User user = userRepo.findByUsername(username);
+        WebsiteUser user = userRepo.findByUsername(username);
         if(user != null){
             return user;
         }
