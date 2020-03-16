@@ -12,7 +12,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.crypto.password.StandardPasswordEncoder;
 
 import javax.sql.DataSource;
-
+//comment line
 
 @Configuration
 @EnableWebSecurity
